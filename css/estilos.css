@@ -1,0 +1,8 @@
+#Cuerpo {
+    height: 630px;
+    width: 100%;
+    border:solid 3px black;
+    display:block;
+    float: top;
+    text-align: center;
+}
