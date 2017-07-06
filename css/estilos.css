@@ -1,3 +1,12 @@
+#Cabecera {
+    height: 73px;
+    width: 100%;
+    border:solid 3px black;
+    display:block;
+    float: top;
+    background-color: blue;
+}
+
 #Cuerpo {
     height: 630px;
     width: 100%;
@@ -5,4 +14,15 @@
     display:block;
     float: top;
     text-align: center;
+}
+
+#login{
+    background: aqua;
+    width: 300px;
+    height: 200px;
+    border: 1px solid cadetblue;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 200px;
 }

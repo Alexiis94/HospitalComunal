@@ -1,16 +1,20 @@
-<<html>
+<?php
+    include 'constantes.php';
+    include 'librerias.php';
+?>
+<html>
     <head>
         <meta charset="UTF-8">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <title></title>
     </head>
     <body>
-        <div >
+        <div id="Cabecera">
             
         </div>
+        <?php if(isset($_SESSION['USR'])) { ?>
         
-        
-        <div id="cerrarSesion" align="right"><button><a href="cerrar.php">Cerrar Sesion</a></button></div>
+        <div id="cerrarSesion" align="right"><button><a href="controladores/Usuario/CerrarSesion.php">Cerrar Sesion</a></button></div>
         <div id="Cuerpo">
             <h1>Mantenedor de Pacientes: </h1>
             
@@ -63,6 +67,20 @@
                 <a href="formularios/paciente/listarPaciente.php">Listar Paciente</a>
             <a href="formularios/paciente/consultarPaciente.php">Consultar Paciente</a>
             </div>
-        </div>       
+        </div>
+        <?php } ?> 
+        <?php if(!isset($_SESSION['USR'])) { ?>
+        <div id="login">
+        <h1>Mantenedor de usuarios: </h1>
+        <form action="controladores/Usuario/Login.php" method="POST">
+            <div>User: <input type="text" name="user"></div>
+            <div>Password: <input type="password" name="pass"></div>
+        <input type="submit" value="Login">
+        </form>
+        </div>
+        
+        <?php
+         } 
+        ?>
     </body>
 </html>

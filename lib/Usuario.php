@@ -23,7 +23,7 @@ class Usuario{
         }
         
         $clavemd5 = md5($this->contrasenna);
-        $sql = "SELECT * FROM usuario WHERE nombreUsuario='$this->nombreUsuario' AND password='$clavemd5'";
+        $sql = "SELECT * FROM usuario WHERE nombreUsuario='$this->nombreUsuario' AND contrasenna='$clavemd5'";
         $resultado=$db->query($sql);
         
         if($resultado->num_rows>=1){
@@ -88,13 +88,13 @@ class Usuario{
     }
     
     //En caso de ser requerido este metodo extrae los datos del usuario directamente de la base de datos mediante su nombre de Usuario
-    function TraertUsuario()
+    function TraerUsuario()
     {
         $oConn = new Conexion();
         $oConn->Conectar();
         $db = $oConn->objconn; 
 
-        $sql = "SELECT idUsuario, nombreUsuario, contrasenna, idPerfil FROM usuario WHERE nombreUsuario=$this->nombreUsuario;";
+        $sql = "SELECT idUsuario, nombreUsuario, contrasenna, idPerfil FROM usuario WHERE nombreUsuario='$this->nombreUsuario';";
         $resultado = $db->query($sql);
         
         while($fila = $resultado->fetch_assoc()){         
