@@ -1,14 +1,19 @@
 <?php
 class Usuario{
     
-    var $idusuario;
-    var $user;
-    var $pass;
-    var $newPass;
-    var $nombre;
-    var $apellido;
+    var $idUsuario;
+    var $nombreUsuario;
+    var $contrasenna;
+    var $idPerfil;
     
-    /* VALIDA LA EXISTENCIA DEL USUARIO*/
+    function __construct($idUsuario=0,$nombreUsuario=0,$contrasenna=0,$idPerfil=0){
+            $this->idUsuario=$idUsuario;
+            $this->nombreUsuario=$nombreUsuario;
+            $this->contrasenna=$contrasenna;
+            $this->idPerfil=$idPerfil;
+    }  
+    
+    //Valida la existencia del usuario en la base de datos mediante la contraseña cifrada con md5 y el nombre de usuario
     function VerificarUsuarioClave(){
         $oConn = new Conexion();
         if ($oConn->Conectar()){
@@ -17,8 +22,8 @@ class Usuario{
             return false;
         }
         
-        $clavemd5 = md5($this->pass);
-        $sql = "SELECT * FROM usuario WHERE usuario='$this->user' AND password='$clavemd5'";
+        $clavemd5 = md5($this->contrasenna);
+        $sql = "SELECT * FROM usuario WHERE nombreUsuario='$this->nombreUsuario' AND password='$clavemd5'";
         $resultado=$db->query($sql);
         
         if($resultado->num_rows>=1){
@@ -27,8 +32,8 @@ class Usuario{
             return false;
         }
     }
-    
-    function VerificarClave(){
+          
+    function AgregarUsuario(){
         $oConn = new Conexion();
         if ($oConn->Conectar()){
             $db = $oConn -> objconn;
@@ -37,51 +42,35 @@ class Usuario{
         }
         
         $clavemd5 = md5($this->pass);
-        $sql = "SELECT * FROM usuario WHERE password='$clavemd5'";
+        $sql = "INSERT INTO usuario(nombreUsuario, contrasenna, idPerfil) VALUES ('$this->nombreUsuario', '$clavemd5', '$this->idPerfil');";
         $resultado=$db->query($sql);
         
-        if($resultado->num_rows>=1){
+        if ($resultado)
             return true;
-        }else{
+        else
             return false;
-        }
+        
     }
     
-    function verificarClaveAdmin(){
+    function ModificarUsuario(){
         $oConn = new Conexion();
         if ($oConn->Conectar()){
             $db = $oConn -> objconn;
         }else{
             return false;
         }
-        $clavemd5 = md5($this->pass);
-        $sql = "SELECT * FROM usuario WHERE password='$clavemd5' AND usuario='admin';";
-                $resultado=$db->query($sql);
-        
-        if($resultado->num_rows>=1){
-            return true;
-        }else{
-            return false;
-        }
-        
-    }
-            
-    function agregarUsuario(){
-        $oConn = new Conexion();
-        if ($oConn->Conectar()){
-            $db = $oConn -> objconn;
-        }else{
-            return false;
-        }
-        
-        $clavemd5 = md5($this->pass);
-        $sql = "INSERT INTO usuario(usuario, password, nombre, apellido) VALUES('$this->user', '$clavemd5', '$this->nombre'"
-                . ", '$this->apellido');";
+        $clavemd5 = md5($this->contrasenna);
+        $sql = "UPDATE usuario SET nombreUsuario='$this->nombreUsuario',contrasenna='$clavemd5',idPerfil=$this->idPerfil"
+                . " WHERE idUsuario=$this->idUsuario";
         $resultado=$db->query($sql);
         
+        if ($resultado)
+            return true;
+        else
+            return false;
     }
     
-    function modificarUsuario(){
+    function EliminarUsuario(){
         $oConn = new Conexion();
         if ($oConn->Conectar()){
             $db = $oConn -> objconn;
@@ -89,21 +78,32 @@ class Usuario{
             return false;
         }
         $clavemd5 = md5($this->newPass);
-        $sql = "UPDATE usuario SET password = '$clavemd5', nombre = '$this->nombre', apellido = '$this->apellido' "
-                . "WHERE usuario = '$this->user';";
+        $sql = "DELETE FROM usuario WHERE idUsuario='$this->idUsuario';";
         $resultado=$db->query($sql);
+        
+        if ($resultado)
+            return true;
+        else
+            return false;
     }
     
-    function eliminarUsuario(){
+    //En caso de ser requerido este metodo extrae los datos del usuario directamente de la base de datos mediante su nombre de Usuario
+    function TraertUsuario()
+    {
         $oConn = new Conexion();
-        if ($oConn->Conectar()){
-            $db = $oConn -> objconn;
-        }else{
-            return false;
-        }
-        $clavemd5 = md5($this->newPass);
-        $sql = "DELETE FROM usuario WHERE usuario='$this->user';";
-        $resultado=$db->query($sql);
+        $oConn->Conectar();
+        $db = $oConn->objconn; 
+
+        $sql = "SELECT idUsuario, nombreUsuario, contrasenna, idPerfil FROM usuario WHERE nombreUsuario=$this->nombreUsuario;";
+        $resultado = $db->query($sql);
+        
+        while($fila = $resultado->fetch_assoc()){         
+          $oUsuario = new Usuario($fila["idUsuario"],
+                                        $fila["nombreUsuario"],
+                                        $fila["contrasenna"],
+                                        $fila["idPerfil"]);
+         }
+         return $oUsuario;
     }
     
 }
