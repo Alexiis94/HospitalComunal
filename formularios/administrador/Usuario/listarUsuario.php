@@ -1,8 +1,47 @@
 <?php
+    include '../../../Constantes.php';
+    include '../../../Librerias.php';
+    if(isset($_SESSION['USRAdministrador'])) {
+    //QUERY Usuarios
+    $sqlUsuario="SELECT idUsuario, idPerfil, nombreUsuario FROM usuario ";
+    $miqueryUsuario=mysqli_query($con,$sqlUsuario);
+?>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+        <title>Administracion Hospital Comunal</title>
+    </head>
+    <body>
+        
+        <div id="Cabecera">
+        </div>
+        <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>
+        <div id="Cuerpo">
+            <div id="ListarUsuarios">
+                <h1>Mantenedor Venta - Lista de Ventas</h1>
+                <div>
+                    <div id="divVista">ID Usuario</div>
+                    <div id="divVista">ID Nombre Usuario</div>
+                    <div id="divVista">ID Perfil</div><BR>
+                        <?php 
+                            while($idUsuariolst = mysqli_fetch_array($miqueryUsuario)) { 
+                                echo '<div id="divVista">'.$idUsuariolst['idUsuario'].'</div>'
+                                        .'<div id="divVista">'.$idUsuariolst['idPerfil'].'</div>'
+                                        .'<div id="divVista">'.$idUsuariolst['nombreUsuario'].'<br>'; 
+                            }
+                        ?>
+                </div>
+                        
+            </div>
+        </div>        
+    </body>
+</html>
+<?php }?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<?php if(!isset($_SESSION['USRAdministrador'])) {
+    header('Location:http://localhost:'.$_SERVER['SERVER_PORT'].'/HospitalComunal/index.php');
+}?>
+
+
 

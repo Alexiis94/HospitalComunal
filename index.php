@@ -48,10 +48,10 @@
             <br>
             <h3>Medico</h3>
             <br>
-            <a href="formularios/administrador/Medico/resgistarMedico.php">Registrar Medico</a>
+            <a href="formularios/administrador/Medico/resgistarMedico.php">Contratar Medico</a>
             <a href="formularios/administrador/Medico/consultarMedico.php">Consultar Medico</a>
             <a href="formularios/administrador/Medico/listarMedico.php">Listar Medico</a>
-            <a href="formularios/administrador/Medico/eliminarMedico.php">Eliminar Medico</a>
+            <a href="formularios/administrador/Medico/eliminarMedico.php">Despedir Medico</a>
             <br>
             <h3>Usuario</h3>
             <br>
