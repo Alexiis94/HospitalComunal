@@ -3,15 +3,17 @@
 class Paciente{
     var $rut;
     var $idPerfil;
+    var $idUsuario;
     var $nombrePaciente;
     var $fechaNacimiento;
     var $sexo;
     var $direccion;
     var $telefono;
     
-    function __construct($rut=0,$idPerfil=0,$nombrePaciente=0,$fechaNacimiento="",$sexo="",$direccion="",$telefono=""){
+    function __construct($rut=0,$idPerfil=0,$idUsuario=0,$nombrePaciente=0,$fechaNacimiento="",$sexo="",$direccion="",$telefono=""){
             $this->rut=$rut;
             $this->idPerfil=$idPerfil;
+            $this->idUsuario=$idUsuario;
             $this->nombrePaciente=$nombrePaciente;
             $this->fechaNacimiento=$fechaNacimiento;
             $this->sexo=$sexo;
@@ -28,8 +30,8 @@ class Paciente{
             return false;
         
         $direccionMD5 = md5($this->direccion);
-        $sql="INSERT INTO paciente(rut, idPerfil, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
-                . " $this->idPerfil, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$direccionMD5','$this->telefono');";
+        $sql="INSERT INTO paciente(rut, idPerfil,idUsuario, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
+                . " $this->idPerfil,$this->idUsuario, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$direccionMD5','$this->telefono');";
               
         $resultado=$db->query($sql);
                

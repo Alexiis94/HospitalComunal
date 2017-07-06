@@ -3,9 +3,9 @@
     include '../../../librerias.php';
     
     if(isset($_SESSION['USRAdministrador'])) {
-    //QUERY Especialidad
-    $sqlEspecialidad="select idEspecialidad, nombreEspecialidad from especialidad";
-    $miqueryEspecialidad=mysqli_query($con,$sqlEspecialidad);    
+    //QUERY Usuario
+    $sqlUsuario="select idUsuario, nombreUsuario from usuario where idPerfil=4";
+    $miqueryUsuario=mysqli_query($con,$sqlUsuario);   
 ?>
 <html>
     <head>
@@ -27,6 +27,20 @@
                         </div>
                         <div><label>Rut</label>
                             <input type="number" name="rutPaciente">
+                        </div>
+                        <div><label>Usuario</label>
+                            <select name="idUsuario">
+                                <?php 
+                                    while($idUsuariolst = mysqli_fetch_array($miqueryUsuario)) { 
+                                    ?> 
+                                    <option value =  <?php echo $idUsuariolst['idUsuario'];?> >
+                                    <?php echo $idUsuariolst['nombreUsuario'].' - '.$idUsuariolst['idUsuario']; ?>
+
+                                    </option> 
+                                    <?php 
+                                    }
+                                    ?> 
+                            </select>
                         </div>
                         <div><label>Sexo</label>
                             <select name="sexo">

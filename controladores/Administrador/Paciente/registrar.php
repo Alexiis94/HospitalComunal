@@ -11,6 +11,7 @@ $sexo = $_POST['sexo'];
 $fechaNacimiento = $_POST['fechaNacimiento'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
+$idUsuario = $_POST['idUsuario'];
 
 //Agregar los datos recibidos a una clase
 $oPaciente = new Paciente();
@@ -21,6 +22,7 @@ $oPaciente->fechaNacimiento=$fechaNacimiento;
 $oPaciente->direccion=$direccion;
 $oPaciente->telefono=$telefono;
 $oPaciente->idPerfil=4;
+$oPaciente->idUsuario=$idUsuario;
 
 //Agrega el usuario a la base de datos
 if($oPaciente->AgregarPaciente()){
