@@ -41,7 +41,7 @@ class Usuario{
             return false;
         }
         
-        $clavemd5 = md5($this->pass);
+        $clavemd5 = md5($this->contrasenna);
         $sql = "INSERT INTO usuario(nombreUsuario, contrasenna, idPerfil) VALUES ('$this->nombreUsuario', '$clavemd5', '$this->idPerfil');";
         $resultado=$db->query($sql);
         
@@ -77,7 +77,6 @@ class Usuario{
         }else{
             return false;
         }
-        $clavemd5 = md5($this->newPass);
         $sql = "DELETE FROM usuario WHERE idUsuario='$this->idUsuario';";
         $resultado=$db->query($sql);
         
