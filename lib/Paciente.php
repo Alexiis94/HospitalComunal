@@ -2,16 +2,16 @@
 
 class Paciente{
     var $rut;
-    var $idUsuario;
+    var $idPerfil;
     var $nombrePaciente;
     var $fechaNacimiento;
     var $sexo;
     var $direccion;
     var $telefono;
     
-    function __construct($rut=0,$idUsuario=0,$nombrePaciente=0,$fechaNacimiento="",$sexo="",$direccion="",$telefono=""){
+    function __construct($rut=0,$idPerfil=0,$nombrePaciente=0,$fechaNacimiento="",$sexo="",$direccion="",$telefono=""){
             $this->rut=$rut;
-            $this->idUsuario=$idUsuario;
+            $this->idPerfil=$idPerfil;
             $this->nombrePaciente=$nombrePaciente;
             $this->fechaNacimiento=$fechaNacimiento;
             $this->sexo=$sexo;
@@ -26,8 +26,8 @@ class Paciente{
         $db=$oConn->objconn;
         else
             return false;
-        $sql="INSERT INTO paciente(rut, idUsuario, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
-                . " $this->idUsuario, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$this->direccion','$this->telefono');";
+        $sql="INSERT INTO paciente(rut, idPerfil, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
+                . " $this->idPerfil, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$this->direccion','$this->telefono');";
               
         $resultado=$db->query($sql);
                
@@ -37,7 +37,7 @@ class Paciente{
             return false;        
     }
     
-    function ModificarVenta(){
+    function ModificarPaciente(){
         $oConn=new Conexion();
         
         if ($oConn->Conectar())
@@ -80,12 +80,12 @@ class Paciente{
         $oConn->Conectar();
         $db = $oConn->objconn; 
 
-        $sql = "SELECT rut,idUsuario,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente WHERE rut='$this->rut';";
+        $sql = "SELECT rut,idPerfil,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente WHERE rut='$this->rut';";
         $resultado = $db->query($sql);
         
         while($fila = $resultado->fetch_assoc()){         
           $oPaciente = new Paciente($fila["rut"],
-                                        $fila["idUsuario"],
+                                        $fila["idPerfil"],
                                         $fila["nombrePaciente"],
                                         $fila["fechaNacimiento"],
                                         $fila["sexo"],

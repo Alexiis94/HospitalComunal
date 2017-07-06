@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2017 a las 23:16:27
+-- Tiempo de generación: 07-07-2017 a las 00:35:54
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `examen_dai`
 --
-
+create database examen_dai;
+use examen_dai;
 -- --------------------------------------------------------
 
 --
@@ -113,7 +114,7 @@ INSERT INTO `medico` (`rut`, `nombreMedioco`, `fechaContratacion`, `especialidad
 
 CREATE TABLE `paciente` (
   `rut` int(9) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
+  `idPerfil` int(11) NOT NULL,
   `nombrePaciente` varchar(25) COLLATE utf8_bin NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `sexo` varchar(10) COLLATE utf8_bin NOT NULL,
@@ -125,7 +126,7 @@ CREATE TABLE `paciente` (
 -- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `paciente` (`rut`, `idUsuario`, `nombrePaciente`, `fechaNacimiento`, `sexo`, `Direccion`, `Telefono`) VALUES
+INSERT INTO `paciente` (`rut`, `idPerfil`, `nombrePaciente`, `fechaNacimiento`, `sexo`, `Direccion`, `Telefono`) VALUES
 (1298739, 4, 'Prueba', '2017-07-06', 'Femenino', 'askdl', 'asodk'),
 (19585652, 4, 'Diego Diaz', '2017-06-06', 'Masculino', 'Fake Street 123', '+56927364528');
 
@@ -210,7 +211,7 @@ ALTER TABLE `medico`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`rut`),
-  ADD KEY `Paciente_FK_Usuario` (`idUsuario`);
+  ADD KEY `Paciente_FK_Usuario` (`idPerfil`);
 
 --
 -- Indices de la tabla `perfil`
@@ -276,7 +277,7 @@ ALTER TABLE `medico`
 -- Filtros para la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  ADD CONSTRAINT `Paciente_FK_Usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+  ADD CONSTRAINT `Paciente_FK_Perfil` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`);
 
 --
 -- Filtros para la tabla `usuario`

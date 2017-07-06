@@ -20,7 +20,7 @@ $oPaciente->sexo=$sexo;
 $oPaciente->fechaNacimiento=$fechaNacimiento;
 $oPaciente->direccion=$direccion;
 $oPaciente->telefono=$telefono;
-$oPaciente->idUsuario=4;
+$oPaciente->idPerfil=4;
 
 //Agrega el usuario a la base de datos
 if($oPaciente->AgregarPaciente()){
