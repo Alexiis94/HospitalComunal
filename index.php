@@ -91,7 +91,12 @@
             
             <div id="mantPaci">
                 <a href="formularios/paciente/listarPaciente.php">Listar Paciente</a>
-            <a href="formularios/paciente/consultarPaciente.php">Consultar Paciente</a>
+                <a href="formularios/paciente/consultarPaciente.php">Consultar Paciente</a>
+            <br>
+            <h3>Atenciones</h3>
+            <br>
+            <a href="formularios/paciente/atencion/listarAtencion.php">Listar Atencion</a>
+            <a href="formularios/paciente/atencion/consultarAtencion.php">Consultar Atencion</a>
             </div>
         </div>
         
