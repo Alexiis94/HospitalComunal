@@ -68,18 +68,20 @@
             
             <div id="mantSecre">
             <h3>Paciente</h3>
-            <a href="formularios/secretaria/listarPaciente.php">Listar Paciente</a>
-            <a href="formularios/secretaria/consultarPaciente.php">Consultar Paciente</a>
-            <a href="formularios/secretaria/listarMedico.php">Listar Medico</a>
+            <a href="formularios/secretaria/paciente/listarPaciente.php">Listar Paciente</a>
+            <a href="formularios/secretaria/paciente/consultarPaciente.php">Consultar Paciente</a>
+            
             <br>
             <h3>Medico</h3>
             <br>
-            <a href="formularios/secretaria/consultarMedico.php">Consultar Medico</a>
-            <a href="formularios/secretaria/agendarAtencion.php">Agendar  Atencion</a>
-            <a href="formularios/secretaria/eliminarAtencion.php">Eliminar Atenciones</a>
+            <a href="formularios/secretaria/medico/listarMedico.php">Listar Medico</a>
+            <a href="formularios/secretaria/medico/consultarMedico.php">Consultar Medico</a>
             <br>
+            <h3>Atenciones</h3>
             <br>
-            <a href="formularios/secretaria/perdidaConsulta.php">Consulta Perdida</a>
+            <a href="formularios/secretaria/atencion/agendarAtencion.php">Agendar  Atencion</a>
+            <a href="formularios/secretaria/atencion/eliminarAtencion.php">Eliminar Atenciones</a>
+            <a href="formularios/secretaria/atencion/modificarEstadoAtencion.php">Modificar Estado Atencion</a>
             
             </div>
         </div>

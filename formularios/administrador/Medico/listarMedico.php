@@ -19,7 +19,7 @@
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>
         <div id="Cuerpo">
             <div id="ListarUsuarios">
-                <h1>Mantenedor Venta - Lista de Ventas</h1>
+                <h1>Mantenedor Medico - Lista de Medicos</h1>
                 <div>
                     <div id="divVista">Rut Medico</div>
                     <div id="divVista">Nombre Medico</div>

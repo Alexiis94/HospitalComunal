@@ -1,7 +1,7 @@
 <?php
     include '../../../Constantes.php';
     include '../../../Librerias.php';
-    if(isset($_SESSION['USRAdministrador'])) {
+    if(isset($_SESSION['USRSecretaria'])) {
     //QUERY Paciente
     $sqlPaciente="SELECT rut,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente;";
     $miqueryPaciente=mysqli_query($con,$sqlPaciente);
@@ -46,7 +46,7 @@
 </html>
 <?php }?>
 
-<?php if(!isset($_SESSION['USRAdministrador'])) {
+<?php if(!isset($_SESSION['USRSecretaria'])) {
     header('Location:http://localhost:'.$_SERVER['SERVER_PORT'].'/HospitalComunal/index.php');
 }?>
 

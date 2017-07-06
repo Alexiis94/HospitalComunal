@@ -5,18 +5,20 @@ include("../../../librerias.php");
 <?php
 
 //Recibe los datos del formulario via POST
-$rutPacientePost = $_POST['rut'];
-
-
+$rutMedico = $_POST['rutMedico'];
+$rutPaciente = $_POST['rutPaciente'];
+$fechaAtencion = $_POST['fechaAtencion'];
 
 //Agregar los datos recibidos a una clase
-$oPaciente = new Paciente();
-$oPaciente->rut=$rutPacientePost;
+$oConsulta = new Consulta();
+$oConsulta->idEstado=1;
+$oConsulta->fechaAtencion=$fechaAtencion;
+$oConsulta->rutMedico=$rutMedico;
+$oConsulta->rutPaciente=$rutPaciente;
 
 
-
-//Despide al medico y lo elimina de la base de datos
-if($oPaciente->EliminarPaciente()){
+//Agrega el usuario a la base de datos
+if($oConsulta->AgregarConsulta()){
     ?>
 <html>
     <head>
@@ -29,8 +31,8 @@ if($oPaciente->EliminarPaciente()){
         <div id="Cabecera">
         </div>  
         <div id="Cuerpo">
-                <h4>Paciente - Eliminar</h4>
-                Paciente Eliminado!
+                <h4>Consulta - Agendar</h4>
+                Consulta Agendada!
                 <a href="../../../index.php">Volver a Home</a>
 
         </div> 
@@ -55,9 +57,9 @@ else
         <div id="Cabecera">
         </div>  
         <div id="Cuerpo">
-                <h4>Paciente - Eliminado</h4>
-                Paciente Eliminado!
-                <a href="../../../formularios/administrador/Paciente/eliminarPaciente.php">Volver a intentar</a><br>
+                <h4>Consulta - Agendar</h4>
+                Consulta no Agendada!
+                <a href="../../../formularios/secretaria/atencion/agendarAtencion.php">Volver a intentar</a><br>
                 <a href="../../../index.php">Volver a Home</a>
 
         </div> 

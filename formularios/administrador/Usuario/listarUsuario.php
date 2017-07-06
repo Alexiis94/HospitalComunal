@@ -19,7 +19,7 @@
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>
         <div id="Cuerpo">
             <div id="ListarUsuarios">
-                <h1>Mantenedor Venta - Lista de Ventas</h1>
+                <h1>Mantenedor Usuario - Lista de Usuarios</h1>
                 <div>
                     <div id="divVista">ID Usuario</div>
                     <div id="divVista">ID Nombre Usuario</div>
