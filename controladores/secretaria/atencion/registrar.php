@@ -17,7 +17,7 @@ $oConsulta->rutMedico=$rutMedico;
 $oConsulta->rutPaciente=$rutPaciente;
 
 
-//Agrega el usuario a la base de datos
+//Agrega la Atencion a la base de datos
 if($oConsulta->AgregarConsulta()){
     ?>
 <html>
