@@ -27,7 +27,7 @@ class Paciente{
         else
             return false;
         $sql="INSERT INTO paciente(rut, idUsuario, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
-                . " $this->idUsuario, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$this->direccion');";
+                . " $this->idUsuario, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$this->direccion','$this->telefono');";
               
         $resultado=$db->query($sql);
                

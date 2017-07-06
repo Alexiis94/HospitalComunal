@@ -19,7 +19,7 @@
         </div>
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>    
         <div id="Cuerpo">
-                <h1>Mantenedor Venta - Agregar</h1>
+                <h1>Mantenedor Usuario - Agregar</h1>
                 <div id="registrarUsuario">
                     <form action="../../../controladores/Administrador/Usuario/registar.php" method="POST">
                         <div><label>Nombre Usuario</label>
