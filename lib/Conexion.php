@@ -7,7 +7,7 @@ class Conexion{
     var $dbusr= "root";
     var $dbpwd= "";
     var $dbhots= "localhost";
-    var $dbname= "simplycolors";
+    var $dbname= "examen_dai";
     public function  Conectar()
             {
        // $miconn = new myqli("localhost","root","","simplycolors");
@@ -23,5 +23,5 @@ class Conexion{
     }
 }
 //Para Conexion con Preguntas SQL de listbox Dinamicos
-$con=mysqli_connect("localhost","root","","simplycolors");
+$con=mysqli_connect("localhost","root","","examen_dai");
 ?>
