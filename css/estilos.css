@@ -1,3 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+a{
+    text-align: center;
+    border: 3px solid darkgray;
+}
+
+select{
+    margin: 0 0 1em 0;
+    width: 200px;
+    height: 25px;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 30px;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+h1{
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+#login{
+    background: aqua;
+    width: 300px;
+    height: 200px;
+    border: 1px solid cadetblue;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 200px;
+}
+
+input[type=number]{
+    margin: 0 0 1em 0;
+    width: 200px;
+    height: 25px;
+    border: 0px;
+    padding: 1em;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+input[type=text]{
+    margin: 0 0 1em 0;
+    width: 200px;
+    height: 25px;
+    border: 0px;
+    padding: 1em;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+input[type=password]{
+    margin: 0 0 1em 0;
+    width: 200px;
+    height: 25px;
+    border: 0px;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+
+
+/*Aquí dejo un boton por si lo quieren usar, sino usan el antiguo*/
+input[type=submit]{
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 31;
+  -moz-border-radius: 31;
+  border-radius: 31px;
+  text-shadow: 2px 2px 4px #992699;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+    
+}
+
+input[type=submit]:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+    
+}
+
 #Cabecera {
     height: 73px;
     width: 100%;

@@ -12,7 +12,7 @@
         <div id="Cabecera">
             
         </div>
-        <?php if(isset($_SESSION['USR'])) { ?>
+        <?php if(isset($_SESSION['USRDirector'])) { ?>
         
         <div id="cerrarSesion" align="right"><button><a href="controladores/Usuario/CerrarSesion.php">Cerrar Sesion</a></button></div>
         <div id="Cuerpo">
@@ -22,7 +22,7 @@
                 <a href="formularios/director/listarPaciente.php">Listar Paciente</a>
             <a href="formularios/director/estadisticaSistema.php">Consultar Sistema</a>
             </div>
-            
+        <?php }if(isset($_SESSION['USRAdministrador'])) { ?>
             <h1>Mantenedor de Administrador: </h1>
             
             <div id="mantAdmi">
@@ -43,7 +43,8 @@
             <a href="formularios/administrador/Usuario/listarUsuario.php">Listar Usuario</a>
             <a href="formularios/administrador/Usuario/EliminarUsuario.php">Eliminar Usuario</a>
             </div>
-
+            
+        <?php }if(isset($_SESSION['USRSecretaria'])) { ?>
             <h1>Mantenedor de Secretaria: </h1>
             
             <div id="mantSecre">
@@ -60,7 +61,7 @@
             <a href="formularios/secretaria/perdidaConsulta.php">Consulta Perdida</a>
             
             </div>
-            
+            <?php }if(isset($_SESSION['USRPaciente'])) { ?>
             <h1>Mantenedor de Pacientes: </h1>
             
             <div id="mantPaci">
@@ -69,7 +70,8 @@
             </div>
         </div>
         <?php } ?> 
-        <?php if(!isset($_SESSION['USR'])) { ?>
+        <?php if(!isset($_SESSION['USRPaciente']) && !isset($_SESSION['USRSecretaria']) && !isset($_SESSION['USRDirector'])
+                && !isset($_SESSION['USRAdministrador'])) { ?>
         <div id="login">
         <h1>Mantenedor de usuarios: </h1>
         <form action="controladores/Usuario/Login.php" method="POST">
@@ -79,8 +81,9 @@
         </form>
         </div>
         
-        <?php
-         } 
-        ?>
+       
     </body>
 </html>
+ <?php
+            } 
+        ?>
