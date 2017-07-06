@@ -26,8 +26,10 @@ class Paciente{
         $db=$oConn->objconn;
         else
             return false;
+        
+        $direccionMD5 = md5($this->direccion);
         $sql="INSERT INTO paciente(rut, idPerfil, nombrePaciente, fechaNacimiento, sexo, Direccion, Telefono) VALUES ('$this->rut',"
-                . " $this->idPerfil, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$this->direccion','$this->telefono');";
+                . " $this->idPerfil, '$this->nombrePaciente','$this->fechaNacimiento','$this->sexo','$direccionMD5','$this->telefono');";
               
         $resultado=$db->query($sql);
                
@@ -43,9 +45,11 @@ class Paciente{
         if ($oConn->Conectar())
         $db=$oConn->objconn;
         else
-            return false;     
+            return false; 
+        
+        $direccionMD5 = md5($this->direccion);
         $sql="UPDATE paciente SET nombrePaciente='$this->nombrePaciente',"
-                . "fechaNacimiento='$this->fechaNacimiento',sexo='$this->sexo',Direccion='$this->direccion',Telefono='$this->telefono' WHERE rut='$this->rut';";
+                . "fechaNacimiento='$this->fechaNacimiento',sexo='$this->sexo',Direccion='$direccionMD5',Telefono='$this->telefono' WHERE rut='$this->rut';";
               
         $resultado=$db->query($sql);
                

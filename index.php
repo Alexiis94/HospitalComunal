@@ -10,7 +10,6 @@
     </head>
     <body>
         <div id="Cabecera">
-            
         </div>
         <?php if(isset($_SESSION['USRDirector'])) { ?>
         
@@ -21,16 +20,16 @@
             
             <div id="mantDirec">
                 <h3>Pacientes</h3>
-                <a href="formularios/director/listarPaciente.php">Listar Paciente</a>
-                <a href="formularios/director/consultarPaciente.php">Consultar Paciente</a>
+                <a href="formularios/director/paciente/listarPaciente.php">Listar Paciente</a>
+                <a href="formularios/director/paciente/consultarPaciente.php">Consultar Paciente</a>
                 <h3>Medicos</h3>
-                <a href="formularios/director/listarPaciente.php">Listar Medicos</a>
-                <a href="formularios/director/consultarPaciente.php">Consultar Medicos</a>
+                <a href="formularios/director/medico/listarMedico.php">Listar Medicos</a>
+                <a href="formularios/director/medico/consultarMedico.php">Consultar Medicos</a>
                 <h3>Atenciones</h3>
-                <a href="formularios/director/listarPaciente.php">Listar Atenciones</a>
-                <a href="formularios/director/consultarPaciente.php">Consultar Atenciones</a>
+                <a href="formularios/director/atencion/listarAtenciones.php">Listar Atenciones</a>
+                <a href="formularios/director/atencion/consultarAtenciones.php">Consultar Atenciones</a>
                 <h3>Estadisticas del sistema</h3>
-                <a href="formularios/director/estadisticaSistema.php">Consultar Sistema</a>
+                <a href="formularios/director/estadisticas/consultarEstadisticas.php">Consultar Sistema</a>
                 
             </div>
         </div>
