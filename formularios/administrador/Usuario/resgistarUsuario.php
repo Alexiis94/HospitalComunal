@@ -20,7 +20,7 @@
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>    
         <div id="Cuerpo">
                 <h1>Mantenedor Usuario - Agregar</h1>
-                <div id="registrarUsuario">
+                <div id="registrarUsuario"><div id="Usuario">
                     <form action="../../../controladores/Administrador/Usuario/registar.php" method="POST">
                         <div><label>Nombre Usuario</label>
                             <input type="text" name="nombreUsuario">
@@ -44,7 +44,7 @@
                         </div>
                         
                         <input type="submit" value="Agregar">
-                    </form>
+                    </form></div>
                 </div>
             
         </div> 

@@ -20,7 +20,7 @@
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>    
         <div id="Cuerpo">
                 <h1>Usuario - Eliminar</h1>
-                <div id="eliminarUsuario">
+                <div id="eliminarUsuario"><div id="Usuariop">
                     <form action="../../../controladores/Administrador/Usuario/eliminar.php" method="POST">
                         <div><label>ID Perfil</label>
                             <select name="idUsuario">
@@ -38,7 +38,7 @@
                         </div>
                         
                         <input type="submit" value="Eliminar">
-                    </form>
+                    </form></div>
                 </div>
             
         </div> 

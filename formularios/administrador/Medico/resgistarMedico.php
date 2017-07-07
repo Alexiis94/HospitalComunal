@@ -21,6 +21,7 @@
         <div id="Cuerpo">
                 <h1>Mantenedor Medico - Contratar</h1>
                 <div id="registrarUsuario">
+                    <div id="Medico">
                     <form action="../../../controladores/Administrador/Medico/registar.php" method="POST">
                         <div><label>Nombre Medico</label>
                             <input type="text" name="nombreMedico">
@@ -44,13 +45,13 @@
                         </div>
                         <div><label>Fecha Contratacion</label>
                             <input type="date" name="fechaContratacion">
-                        </div>
+                        </div><br>
                         <div><label>Valor Consulta</label>
                             <input type="number" name="valorConsulta">
                         </div>
                         
                         <input type="submit" value="Contratar">
-                    </form>
+                    </form></div>
                 </div>
             
         </div> 

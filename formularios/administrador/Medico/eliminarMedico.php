@@ -20,7 +20,7 @@
         <div align="right"><button><a id="cancelar" href="../../../index.php">Cancelar</a></button></div>    
         <div id="Cuerpo">
                 <h1>Medico - Despedir</h1>
-                <div id="eliminarUsuario">
+                <div id="eliminarUsuario"><div id="Medicod">
                     <form action="../../../controladores/Administrador/Medico/eliminar.php" method="POST">
                         <div><label>RUT MEDICO</label>
                             <select name="rut">
@@ -38,7 +38,7 @@
                         </div>
                         
                         <input type="submit" value="Despedir">
-                    </form>
+                    </form></div>
                 </div>
             
         </div> 

@@ -21,16 +21,30 @@
             <div id="ListarUsuarios">
                 <h1>Mantenedor Usuario - Lista de Usuarios</h1>
                 <div>
-                    <div id="divVista">ID Usuario</div>
-                    <div id="divVista">ID Nombre Usuario</div>
-                    <div id="divVista">ID Perfil</div><BR>
-                        <?php 
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="divVista">ID Usuario</div>
+                            </td>
+                            <td>
+                                <div id="divVista">ID Perfil</div>
+                                
+                            </td>
+                            <td>
+                                <div id="divVista">ID Nombre Usuario</div>
+                            </td>
+                        </tr>
+                        
+                            <?php 
                             while($idUsuariolst = mysqli_fetch_array($miqueryUsuario)) { 
-                                echo '<div id="divVista">'.$idUsuariolst['idUsuario'].'</div>'
-                                        .'<div id="divVista">'.$idUsuariolst['idPerfil'].'</div>'
-                                        .'<div id="divVista">'.$idUsuariolst['nombreUsuario'].'<br>'; 
+                                echo '<tr><td><div id="divVista">'.$idUsuariolst['idUsuario'].'</div></td>'
+                                        .'<td><div id="divVista">'.$idUsuariolst['idPerfil'].'</div></td>'
+                                        .'<td><div id="divVista">'.$idUsuariolst['nombreUsuario'].'</td></tr>'; 
                             }
                         ?>
+                        
+                    </table>
+                        
                 </div>
                         
             </div>
