@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2017 a las 02:00:32
+-- Tiempo de generación: 07-07-2017 a las 03:26:10
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `examen_dai`
 --
-
+create database examen_dai;
+use examen_dai;
 -- --------------------------------------------------------
 
 --
