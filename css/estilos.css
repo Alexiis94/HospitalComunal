@@ -28,9 +28,24 @@ h1{
     font-family: 'Patrick Hand SC', cursive;
 }
 
-#divVista{
+#divVistaP{
     width: 180px;
-    height: 20px;
+    height: 40px;
+    float: left;
+}
+#listp{
+    width: 200px;
+    height: 40px;
+    float: left;
+}
+#listp1{
+    width: 200px;
+    height: 40px;
+    float: left;
+}
+#divVista{
+    width: 170px;
+    height: 40px;
     float: left;
 }
 

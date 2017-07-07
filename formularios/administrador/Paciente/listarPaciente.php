@@ -21,23 +21,26 @@
             <div id="ListarUsuarios">
                 <h1>Mantenedor Pacientes - Lista de Pacientes</h1>
                 <div>
-                    <div id="divVista">Rut Paciente</div>
-                    <div id="divVista">Nombre Paciente</div>
-                    <div id="divVista">Fecha Nacimiento</div>
-                    <div id="divVista">Sexo</div>
-                    <div id="divVista">Direccion</div>
-                    <div id="divVista">Telefono</div><BR>
-                    
+                    <div id="listp1">
+                    <div id="divVistaP">Rut Paciente</div>
+                    <div id="divVistaP">Nombre Paciente</div>
+                    <div id="divVistaP">Fecha Nacimiento</div>
+                    <div id="divVistaP">Sexo</div>
+                    <div id="divVistaP">Direccion</div>
+                    <div id="divVistaP">Telefono</div><BR>
+                    </div>
+                    <div id="listp">
                         <?php 
                             while($idPacientelst = mysqli_fetch_array($miqueryPaciente)) { 
-                                echo '<div id="divVista">'.$idPacientelst['rut'].'</div>'
-                                        .'<div id="divVista">'.$idPacientelst['nombrePaciente'].'</div>'
-                                        .'<div id="divVista">'.$idPacientelst['fechaNacimiento'].'</div>'
-                                        .'<div id="divVista">'.$idPacientelst['sexo'].'</div>'
-                                        .'<div id="divVista">'.$idPacientelst['Direccion'].'</div>'
-                                        .'<div id="divVista">'.$idPacientelst['Telefono'].'</div>'.'<br>'; 
+                                echo '<div id="divVistaP_R">'.$idPacientelst['rut'].'</div>'
+                                        .'<div id="divVistaP_R">'.$idPacientelst['nombrePaciente'].'</div>'
+                                        .'<div id="divVistaP_R">'.$idPacientelst['fechaNacimiento'].'</div>'
+                                        .'<div id="divVistaP_R">'.$idPacientelst['sexo'].'</div>'
+                                        .'<div id="divVistaP_R">'.$idPacientelst['Direccion'].'</div>'
+                                        .'<div id="divVistaP_R">'.$idPacientelst['Telefono'].'</div>'.'<br>'; 
                             }
                         ?>
+                    </div>
                 </div>
                         
             </div>
