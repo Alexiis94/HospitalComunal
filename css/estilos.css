@@ -29,10 +29,21 @@ h1{
 }
 
 #divVistaP{
-    width: 180px;
+    width: 222px;
     height: 40px;
     float: left;
+    margin-top: 10px;
 }
+
+#divVistaM{
+    width: 228px;
+    height: 40px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
 #listp{
     width: 200px;
     height: 40px;
@@ -44,7 +55,7 @@ h1{
     float: left;
 }
 #divVista{
-    width: 170px;
+    width: 200px;
     height: 40px;
     float: left;
 }
