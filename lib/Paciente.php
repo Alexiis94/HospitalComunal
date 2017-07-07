@@ -80,18 +80,41 @@ class Paciente{
             return false;        
     }
     
-    function TraertVenta()
+    function TraertUsuario()
     {
         $oConn = new Conexion();
         $oConn->Conectar();
         $db = $oConn->objconn; 
 
-        $sql = "SELECT rut,idPerfil,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente WHERE rut='$this->rut';";
+        $sql = "SELECT rut,idPerfil,idUsuario,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente WHERE rut='$this->rut';";
         $resultado = $db->query($sql);
         
         while($fila = $resultado->fetch_assoc()){         
           $oPaciente = new Paciente($fila["rut"],
                                         $fila["idPerfil"],
+                                        $fila["idUsuario"],
+                                        $fila["nombrePaciente"],
+                                        $fila["fechaNacimiento"],
+                                        $fila["sexo"],
+                                        $fila["Direccion"],
+                                        $fila["Telefono"]);
+         }
+         return $oPaciente;
+    }
+    
+    function TraertUsuarioPorUsuario()
+    {
+        $oConn = new Conexion();
+        $oConn->Conectar();
+        $db = $oConn->objconn; 
+
+        $sql = "SELECT rut,idPerfil,idUsuario,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente WHERE idUsuario=$this->idUsuario;";
+        $resultado = $db->query($sql);
+        
+        while($fila = $resultado->fetch_assoc()){         
+          $oPaciente = new Paciente($fila["rut"],
+                                        $fila["idPerfil"],
+                                        $fila["idUsuario"],
                                         $fila["nombrePaciente"],
                                         $fila["fechaNacimiento"],
                                         $fila["sexo"],

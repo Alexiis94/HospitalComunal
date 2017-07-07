@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2017 a las 00:35:54
+-- Tiempo de generación: 07-07-2017 a las 02:00:32
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -19,8 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `examen_dai`
 --
-create database examen_dai;
-use examen_dai;
+
 -- --------------------------------------------------------
 
 --
@@ -115,6 +114,7 @@ INSERT INTO `medico` (`rut`, `nombreMedioco`, `fechaContratacion`, `especialidad
 CREATE TABLE `paciente` (
   `rut` int(9) NOT NULL,
   `idPerfil` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
   `nombrePaciente` varchar(25) COLLATE utf8_bin NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `sexo` varchar(10) COLLATE utf8_bin NOT NULL,
@@ -126,9 +126,11 @@ CREATE TABLE `paciente` (
 -- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `paciente` (`rut`, `idPerfil`, `nombrePaciente`, `fechaNacimiento`, `sexo`, `Direccion`, `Telefono`) VALUES
-(1298739, 4, 'Prueba', '2017-07-06', 'Femenino', 'askdl', 'asodk'),
-(19585652, 4, 'Diego Diaz', '2017-06-06', 'Masculino', 'Fake Street 123', '+56927364528');
+INSERT INTO `paciente` (`rut`, `idPerfil`, `idUsuario`, `nombrePaciente`, `fechaNacimiento`, `sexo`, `Direccion`, `Telefono`) VALUES
+(128397, 4, 10, 'Jaunito', '2017-07-03', 'Masculino', '68a74b602ec5c1b677acd40ffb92bafb', '+127612387'),
+(1243124, 4, 8, 'Prueba Direccion', '2017-06-26', 'Femenino', '1bc29b36f623ba82aaf6724fd3b16718', '+123412312'),
+(1298739, 4, 9, 'Prueba', '2017-07-06', 'Femenino', 'askdl', 'asodk'),
+(19585652, 4, 2, 'Diego Diaz', '2017-06-06', 'Masculino', 'Fake Street 123', '+56927364528');
 
 -- --------------------------------------------------------
 
@@ -172,7 +174,10 @@ INSERT INTO `usuario` (`idUsuario`, `nombreUsuario`, `contrasenna`, `idPerfil`) 
 (1, 'ddiazj', 'a189c633d9995e11bf8607170ec9a4b8', 2),
 (2, 'DiegoPaciente', 'a189c633d9995e11bf8607170ec9a4b8', 4),
 (3, 'DiegoDirector', 'a189c633d9995e11bf8607170ec9a4b8', 1),
-(4, 'DiegoSecretario', 'a189c633d9995e11bf8607170ec9a4b8', 3);
+(4, 'DiegoSecretario', 'a189c633d9995e11bf8607170ec9a4b8', 3),
+(8, 'Algo1', 'a189c633d9995e11bf8607170ec9a4b8', 4),
+(9, 'Algo2', 'a189c633d9995e11bf8607170ec9a4b8', 4),
+(10, 'Nuevo Juanito', 'a189c633d9995e11bf8607170ec9a4b8', 4);
 
 --
 -- Índices para tablas volcadas
@@ -211,7 +216,8 @@ ALTER TABLE `medico`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`rut`),
-  ADD KEY `Paciente_FK_Usuario` (`idPerfil`);
+  ADD KEY `Paciente_FK_Usuario` (`idPerfil`),
+  ADD KEY `Paciente_FK_Usuario_3` (`idUsuario`);
 
 --
 -- Indices de la tabla `perfil`
@@ -254,7 +260,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Restricciones para tablas volcadas
 --
@@ -277,7 +283,8 @@ ALTER TABLE `medico`
 -- Filtros para la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  ADD CONSTRAINT `Paciente_FK_Perfil` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`);
+  ADD CONSTRAINT `Paciente_FK_Perfil` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`),
+  ADD CONSTRAINT `Paciente_FK_Usuario_3` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Filtros para la tabla `usuario`

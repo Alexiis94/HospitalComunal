@@ -2,10 +2,20 @@
     include '../../Constantes.php';
     include '../../Librerias.php';
     if(isset($_SESSION['USRPaciente'])) {
-    //QUERY Paciente
-   
-    $sqlPaciente="SELECT rut,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente where rut='19585652';";
-    $miqueryPaciente=mysqli_query($con,$sqlPaciente);
+        /*
+        //Recupera los datos del usuario y obtiene los datos del paciente
+        $oUsuarioDB = new Usuario();
+        $oUsuarioDB = $_SESSION['USRPaciente'];
+
+        $oPaciente =  new Paciente();
+        $oPaciente->idUsuario = $idUsuario;
+
+        $oPacienteDB = new Paciente();
+        $oPacienteDB = $oPaciente->TraertUsuarioPorUsuario();
+        */
+        //QUERY Paciente        
+        $sqlPaciente="SELECT rut,nombrePaciente,fechaNacimiento,sexo,Direccion,Telefono FROM paciente where rut='19585652';";
+        $miqueryPaciente=mysqli_query($con,$sqlPaciente);
     
 ?>
 <html>
